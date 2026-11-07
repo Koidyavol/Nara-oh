@@ -8,6 +8,74 @@
 
 /* Provider folders and visual-only catalogue */
 .provider-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.provider-folder{position:relative;min-height:185px;text-align:left;overflow:hidden;padding:22px 18px 17px;border:1px solid #70405a;border-radius:14px;color:#fff;background:linear-gradient(145deg,#422039,#211522 75%);box-shadow:0 12px 28px #0004;transition:transform .18s,border-color .18s}.provider-folder:active{transform:scale(.985)}.provider-folder:hover{border-color:#ff789a}.provider-folder:after{content:'▧';position:absolute;right:13px;top:23px;font-size:76px;line-height:1;color:#ffffff0a}.folder-tab{position:absolute;top:0;left:18px;width:54px;height:7px;background:#ff789a;border-radius:0 0 5px 5px}.provider-folder.pragmatic{background:linear-gradient(145deg,#203d50,#171a2a 78%);border-color:#395d78}.provider-folder.pragmatic .folder-tab{background:#69c9ed}.provider-folder.jili{background:linear-gradient(145deg,#593b20,#211723 78%);border-color:#79552e}.provider-folder.jili .folder-tab{background:#f3bf68}.provider-logo{display:block;position:relative;z-index:1;font-weight:900;font-size:20px;letter-spacing:-.7px;color:#fff;text-shadow:0 2px 14px #fff3;margin:7px 0 17px}.provider-logo span{color:#ffb2c7;font-size:12px;margin-left:4px}.pragmatic .provider-logo{font-size:14px;letter-spacing:1px;color:#8bdcff}.jili .provider-logo{font-size:28px;color:#ffd27c;font-style:italic}.provider-folder>b,.provider-folder small,.provider-folder i{display:block;position:relative;z-index:1}.provider-folder>b{font-size:13px;letter-spacing:1px}.provider-folder small{font-size:10px;color:#c7b4c5;margin-top:5px}.provider-folder i{font-style:normal;font-size:9px;letter-spacing:1.2px;color:#ff9bb5;margin-top:17px}.catalog-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.catalog-top .btn{font-size:11px;padding:10px 13px}.catalog-heading{align-items:center}.catalog-heading h2{font-size:25px;letter-spacing:1px}.catalog-mark{width:48px;height:48px;border-radius:13px;background:#49243a;display:grid;place-items:center;font-weight:900;color:#ffadc4;border:1px solid #74405a}.catalog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.catalog-card{background:linear-gradient(145deg,#251827,#19121e);border:1px solid #493044;border-radius:12px;overflow:hidden}.catalog-thumb{height:125px;display:grid;place-items:center;position:relative;font-size:43px;background:radial-gradient(circle at 50% 45%,#a03d60,#3b1d39 65%,#201525)}.catalog-card:nth-child(3n+2) .catalog-thumb{background:radial-gradient(circle at 50% 45%,#3d6c80,#202b43 65%,#1a1729)}.catalog-card:nth-child(3n) .catalog-thumb{background:radial-gradient(circle at 50% 45%,#916033,#45243b 65%,#21172b)}.catalog-thumb small{position:absolute;bottom:9px;left:11px;font-size:8px;letter-spacing:1.5px;color:#ffe1ec}.catalog-info{padding:12px}.catalog-info h3{font-size:12px;margin:0 0 6px}.catalog-info p{font-size:10px;color:#b9a8b8;margin:0 0 11px}.catalog-info button{font-size:10px;padding:9px 11px}.preview-label{font-size:8px;color:#e7bd76;letter-spacing:1px;margin-left:6px}@media(max-width:760px){.provider-grid{grid-template-columns:1fr;gap:11px}.provider-folder{min-height:145px;padding:17px}.provider-logo{margin:5px 0 10px}.provider-folder i{margin-top:11px}.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.catalog-thumb{height:105px}.catalog-info{padding:10px}.catalog-heading h2{font-size:21px}}
+
+/* KOKORO Japanese neon lounge visual refresh */
+:root{--bg:#09090d;--panel:#171116;--panel2:#21131a;--line:#65402f;--pink:#ff315e;--gold:#e9bd68;--muted:#c0a9a0;--white:#fff5e9}
+body{background-color:#09090d;background-image:radial-gradient(ellipse at 50% -12%,#8e182d55,transparent 48%),radial-gradient(ellipse at 100% 48%,#8a53151b,transparent 36%),repeating-linear-gradient(135deg,#ffffff04 0 1px,transparent 1px 8px);font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+.auth-screen{background:radial-gradient(ellipse at center,#55162755,transparent 62%)}
+.auth-box{background:linear-gradient(155deg,#28121b,#100e13 72%);border:1px solid #a45a43;border-radius:5px;box-shadow:0 0 0 5px #160d12,0 0 35px #f02c5422,0 28px 90px #000c;position:relative}
+.auth-box:before,.panel:before{content:'';position:absolute;inset:7px;border:1px solid #e6bd6a22;pointer-events:none}
+.logo-mark{border-radius:4px;background:linear-gradient(145deg,#ffcc7a,#b92b38 58%,#5d1427);box-shadow:0 0 20px #ff365533;color:#fff8e8}
+.logo{letter-spacing:4px;text-shadow:0 0 16px #ff315e55}
+.sub{color:#d4a875;letter-spacing:3px}
+.auth-box h1{font-family:Georgia,serif;letter-spacing:.4px}
+.switch{border:1px solid #573326;border-radius:4px;background:#0d0b0e}
+.switch button{border-radius:3px}
+.switch button.active{background:linear-gradient(100deg,#7f1c2c,#bd283c);box-shadow:inset 0 0 15px #ffbd6a22}
+.field input{border-radius:3px;background:#0c0a0d;border-color:#62402f}
+.field input:focus{border-color:#e9bd68;box-shadow:0 0 0 2px #e9bd6822}
+.btn{border-radius:3px;background:linear-gradient(100deg,#9e1f34,#ed3a50 55%,#a31b31);box-shadow:0 4px 16px #e52a452b;letter-spacing:.4px}
+.btn.ghost{background:linear-gradient(120deg,#2b171a,#181116);border:1px solid #76503a;box-shadow:none;color:#f0d6b4}
+.header{border-bottom:1px solid #8c513a66;position:relative}
+.header:after{content:' ';position:absolute;bottom:-1px;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,#e9bd68,#ff315e,#e9bd68,transparent)}
+.balance-chip{border:1px solid #a77b43;border-radius:3px;background:#21150f;color:#f3ca7b;box-shadow:inset 0 0 15px #e9bd6810}
+.user-chip{border-radius:3px;border-color:#65402f}
+.layout{gap:19px}
+.side{background:linear-gradient(180deg,#21131a,#100e13);border:1px solid #69412f;border-radius:4px;box-shadow:0 10px 30px #0007}
+.side button{border-radius:3px;border-left:2px solid transparent}
+.side button.active,.side button:hover{background:linear-gradient(90deg,#66203388,#2b171d);border-left-color:#e9bd68;color:#ffe7c2}
+.welcome{border:1px solid #a65b3d;border-radius:4px;background:linear-gradient(105deg,#5c1527 0%,#26131d 48%,#121116 100%);box-shadow:inset 0 0 45px #f03c4a12,0 12px 30px #0006}
+.welcome:before{content:'🏮';position:absolute;right:18%;top:12px;font-size:35px;filter:drop-shadow(0 0 12px #ff4b4b);opacity:.75}
+.welcome:after{content:'祭';right:25px;top:4px;font-family:serif;font-size:150px;color:#f4c77a12;text-shadow:0 0 25px #ff315e22}
+.eyebrow{color:#f0c47a;letter-spacing:2.6px}
+.welcome h1{font-family:Georgia,serif;text-shadow:0 3px 20px #ff315e44}
+.section-head h2{font-family:Georgia,serif;letter-spacing:.5px}
+.panel,.card,.catalog-card{background:linear-gradient(145deg,#21151a,#110f14);border:1px solid #65402f;border-radius:4px;box-shadow:0 10px 25px #0005;position:relative}
+.panel{overflow:hidden}
+.big-balance{color:#f4cb78;text-shadow:0 0 22px #e9bd6844;font-family:Georgia,serif}
+.wallet-action{border-radius:4px;background:linear-gradient(140deg,#351720,#171116);border-color:#815039;box-shadow:0 8px 22px #0005}
+.wallet-action>span{border-radius:3px;background:linear-gradient(145deg,#a72b3d,#4b1728);color:#ffdda0}
+.wallet-action.muted-action{filter:saturate(.55)}
+.method-option{border-radius:3px;background:#100d11;border-color:#68442f}
+.method-option.active{background:linear-gradient(100deg,#6d1b2b,#9c2736);border-color:#e8bd6c;box-shadow:0 0 18px #e9bd6820}
+.provider-folder{border-radius:4px;border-color:#9c5d3d;background:linear-gradient(145deg,#57182a,#211219 72%);box-shadow:inset 0 0 30px #ff315e0d,0 12px 28px #0008}
+.provider-folder:after{content:'祭';font-family:serif;color:#ffd68b12;font-size:110px;right:14px;top:8px}
+.folder-tab{height:5px;background:linear-gradient(90deg,#ff315e,#e9bd68)}
+.provider-folder.pragmatic{background:linear-gradient(145deg,#203746,#14131c 78%);border-color:#5a8291}
+.provider-folder.jili{background:linear-gradient(145deg,#63431d,#1c1418 78%);border-color:#b18a4c}
+.provider-folder>b{letter-spacing:2px}
+.provider-folder i{color:#f0c47a}
+.catalog-mark{border-radius:4px;background:linear-gradient(145deg,#85263a,#2b141c);border-color:#9c5d3d;color:#ffdda0}
+.catalog-thumb{background:radial-gradient(circle at 50% 45%,#a72c43,#481728 62%,#151018);border-bottom:1px solid #9a563d}
+.catalog-card:nth-child(3n+2) .catalog-thumb{background:radial-gradient(circle at 50% 45%,#35677a,#1c2a3a 65%,#11121a)}
+.catalog-card:nth-child(3n) .catalog-thumb{background:radial-gradient(circle at 50% 45%,#9a6a2d,#4a2920 65%,#171118)}
+.catalog-info button{border-radius:3px}
+.promo-icon{border-radius:4px;background:linear-gradient(145deg,#81253a,#321520);border:1px solid #9a5a3d}
+.toast{border-radius:4px;background:#28151d;border-color:#b07848;color:#ffe7c2}
+.disclaimer{color:#b69a87}
+@media(max-width:760px){
+ .header{height:67px}
+ .welcome{padding:22px 18px}
+ .welcome:before{right:18%;top:8px;font-size:28px}
+ .welcome:after{right:6px;font-size:105px}
+ .provider-folder{min-height:140px}
+ .mobile-nav{background:linear-gradient(180deg,#1b1117,#0b090d);border-top:1px solid #98603f;box-shadow:0 -8px 25px #0009}
+ .mobile-nav button.active{color:#f5c977}
+ .wallet-actions{gap:9px}
+ .wallet-action{padding:13px 10px;grid-template-columns:34px 1fr;column-gap:9px}
+ .wallet-action>span{width:34px;height:34px;font-size:19px}
+}
+
 </style></head>
 <body>
 <section class="auth-screen" id="authScreen"><div class="auth-box">
