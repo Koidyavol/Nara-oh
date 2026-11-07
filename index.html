@@ -1,79 +1,49 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#f7f4ee">
-  <meta name="description" content="Ruang digital bernuansa Jepang. Masuk atau buat akun untuk memulai.">
-  <title>Kokoro — Ruang Digital</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script type="module" src="app.js"></script>
-</head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#100b12">
+<title>KOKORO — Japanese Arcade</title>
+<style>
+:root{color-scheme:dark;--bg:#100b12;--panel:#1c121e;--panel2:#251725;--line:#493044;--pink:#ff4778;--gold:#e7bd76;--muted:#b9a8b8;--white:#fff7fb}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0,#48172f66,transparent 35%),var(--bg);color:var(--white);font:14px system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}button,input{font:inherit}button{cursor:pointer}.hidden{display:none!important}.auth-screen{min-height:100vh;display:grid;place-items:center;padding:20px}.auth-box{width:min(100%,410px);background:#1b121e;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 25px 80px #0008}.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:3px}.logo-mark{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#ff5c83,#a81e55);display:grid;place-items:center;font-size:22px}.sub{color:var(--muted);font-size:11px;letter-spacing:2px;margin:3px 0 0}.auth-box h1{font-size:29px;margin:27px 0 7px}.auth-box p{color:var(--muted);line-height:1.7}.switch{display:flex;background:#110d15;padding:4px;border-radius:10px;margin:22px 0}.switch button{flex:1;background:none;border:0;color:var(--muted);padding:11px;border-radius:8px}.switch button.active{background:#392034;color:#fff}.field{display:block;margin:14px 0;color:#e8d7e4;font-size:12px}.field input{display:block;width:100%;margin-top:7px;padding:13px;border:1px solid var(--line);border-radius:9px;background:#100c14;color:white;outline:none}.field input:focus{border-color:var(--pink)}.btn{border:0;border-radius:9px;padding:13px 17px;background:linear-gradient(110deg,#ff527c,#c52660);color:white;font-weight:700}.btn.full{width:100%;margin-top:10px}.btn.ghost{background:#342033;border:1px solid var(--line)}.msg{min-height:18px;color:#ff9bb5;font-size:12px}.hint{font-size:11px!important;border-top:1px solid var(--line);padding-top:14px;margin-top:17px}.app{max-width:1180px;margin:auto;padding:0 22px 40px}.header{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff17}.header-right{display:flex;gap:10px;align-items:center}.user-chip,.balance-chip{border:1px solid var(--line);border-radius:30px;padding:9px 13px;color:#f6dce9;font-size:12px}.balance-chip{color:var(--gold)}.layout{display:grid;grid-template-columns:205px 1fr;gap:25px;padding-top:25px}.side{background:#19111b;border:1px solid #ffffff12;border-radius:15px;padding:12px;height:max-content;position:sticky;top:15px}.side button{display:flex;width:100%;gap:12px;align-items:center;text-align:left;border:0;background:transparent;color:#c5b3c4;padding:14px;border-radius:9px;margin:3px 0}.side button.active,.side button:hover{background:#392034;color:#fff}.side b{font-size:18px;width:22px;text-align:center}.main{min-width:0}.welcome{background:linear-gradient(110deg,#36172e,#1c1725 68%,#25172b);border:1px solid #67344e;border-radius:17px;padding:26px;position:relative;overflow:hidden}.welcome:after{content:'心';position:absolute;right:35px;top:4px;font-size:130px;color:#ffffff0b}.eyebrow{font-size:10px;letter-spacing:2px;color:#ff91ad}.welcome h1{font-size:clamp(25px,4vw,38px);margin:12px 0 8px}.welcome p{color:#d0bccc;max-width:520px;line-height:1.7;margin:0}.section{margin-top:27px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:14px}.section-head h2{margin:0;font-size:20px}.section-head small{color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.card{background:linear-gradient(145deg,#251827,#1a121d);border:1px solid var(--line);border-radius:13px;overflow:hidden}.game-art{height:125px;display:grid;place-items:center;font-size:45px;background:radial-gradient(circle,#80304c,#321b36 65%,#201525)}.card:nth-child(2) .game-art{background:radial-gradient(circle,#365c72,#202b43 65%,#1a1729)}.card:nth-child(3) .game-art{background:radial-gradient(circle,#80512e,#45243b 65%,#21172b)}.card-body{padding:14px}.card h3{margin:0 0 6px;font-size:14px}.card p{margin:0 0 13px;color:var(--muted);font-size:11px;line-height:1.6}.card .btn{font-size:11px;padding:10px 13px}.panel{background:#1b121e;border:1px solid var(--line);border-radius:14px;padding:20px}.big-balance{font-size:35px;font-weight:800;color:var(--gold);margin:10px 0}.muted{color:var(--muted);line-height:1.7}.profile-row{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #ffffff12}.promo{display:flex;gap:15px;align-items:center;margin:12px 0}.promo-icon{width:52px;height:52px;display:grid;place-items:center;background:#3a2036;border-radius:12px;font-size:24px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#342033;border:1px solid var(--line);padding:12px 18px;border-radius:10px;box-shadow:0 8px 30px #0008;z-index:9}.mobile-nav{display:none}.disclaimer{font-size:10px;color:#9e8a9c;margin-top:22px;line-height:1.7}@media(max-width:760px){.app{padding:0 14px 90px}.layout{display:block;padding-top:16px}.side{display:none}.cards{grid-template-columns:1fr}.game-art{height:110px}.header{height:65px}.balance-chip{padding:8px 10px}.user-chip{display:none}.mobile-nav{display:flex;position:fixed;z-index:5;bottom:0;left:0;right:0;background:#17101c;border-top:1px solid var(--line);padding:7px 5px calc(7px + env(safe-area-inset-bottom));justify-content:space-around}.mobile-nav button{border:0;background:none;color:#b9a8b8;font-size:10px;display:grid;gap:4px;justify-items:center}.mobile-nav button b{font-size:18px}.mobile-nav button.active{color:#ff7899}.welcome{padding:21px}.welcome:after{right:10px;font-size:90px}.section{margin-top:22px}.section-head h2{font-size:18px}}
+</style></head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#" aria-label="Kokoro beranda"><span class="brand-mark">心</span><span>KOKORO<small>YOUR QUIET CORNER</small></span></a>
-    <nav><a href="#tentang">Tentang</a><button class="nav-login" data-open="login">Masuk</button><button class="nav-join" data-open="register">Buat akun <span>↗</span></button></nav>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow"><i></i RUANG DIGITAL, RASA JEPANG</p>
-        <h1>Temukan ruang<br>untuk <em>menjadi diri.</em></h1>
-        <p class="intro">Sebuah tempat sederhana untuk terhubung, menyimpan hal penting, dan memulai sesuatu yang baru.</p>
-        <div class="hero-actions"><button class="primary" data-open="register">Mulai sekarang <span>→</span></button><button class="text-button" data-open="login">Sudah punya akun? Masuk</button></div>
-        <div class="trust"><span class="avatar-stack"><b>心</b><b>桜</b><b>月</b></span><span>Ruang pribadi. Pengalaman milikmu.</span></div>
-      </div>
-      <div class="hero-art" aria-label="Ilustrasi matahari merah dan Gunung Fuji">
-        <div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
-        <div class="mountain back"></div><div class="mountain front"></div>
-        <div class="water"></div><div class="art-label">静けさ<br><small>SEBUAH AWAL YANG TENANG</small></div>
-        <span class="vertical-note">小さな一歩から</span>
-      </div>
-    </section>
-
-    <section class="features" id="tentang">
-      <div class="section-heading"><span>01 / KENALI RUANG INI</span><h2>Dirancang sederhana.<br><em>Terasa personal.</em></h2></div>
-      <div class="feature-grid">
-        <article><span class="feature-icon">帳</span><h3>Ruang pribadi</h3><p>Kelola informasi akun dan preferensimu dari satu tempat.</p></article>
-        <article><span class="feature-icon">鍵</span><h3>Akses akun</h3><p>Masuk dengan email dan password melalui autentikasi aman.</p></article>
-        <article><span class="feature-icon">月</span><h3>Nyaman di mana saja</h3><p>Tampilan ringan yang dirancang untuk layar ponsel maupun desktop.</p></article>
-      </div>
-    </section>
-  </main>
-
-  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">心</span><span>KOKORO<small>YOUR QUIET CORNER</small></span></a><span>静かな場所から、新しい一歩。</span><span>© 2026 Kokoro</span></footer>
-
-  <div class="modal" id="auth-modal" aria-hidden="true">
-    <div class="modal-backdrop" data-close></div>
-    <section class="auth-card" role="dialog" aria-modal="true" aria-labelledby="auth-title">
-      <button class="close" data-close aria-label="Tutup">×</button>
-      <div class="auth-mark">心</div><p class="eyebrow centered">SELAMAT DATANG</p>
-      <h2 id="auth-title">Senang bertemu<br><em>denganmu.</em></h2>
-      <div class="tabs"><button class="tab active" data-tab="login">Masuk</button><button class="tab" data-tab="register">Daftar</button></div>
-      <form id="auth-form">
-        <label id="name-wrap" class="hidden">Nama pengguna<input id="display-name" type="text" autocomplete="name" placeholder="Nama kamu" minlength="2"></label>
-        <label>Email<input id="email" type="email" autocomplete="email" placeholder="nama@email.com" required></label>
-        <label>Password<input id="password" type="password" autocomplete="current-password" placeholder="Minimal 8 karakter" minlength="8" required></label>
-        <button class="primary submit" id="submit-auth" type="submit">Masuk <span>→</span></button>
-        <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
-      </form>
-      <p class="legal">Dengan melanjutkan, kamu menyetujui ketentuan penggunaan dan kebijakan privasi.</p>
-    </section>
-  </div>
-
-  <div class="modal" id="profile-modal" aria-hidden="true">
-    <div class="modal-backdrop" data-close></div>
-    <section class="auth-card profile-card" role="dialog" aria-modal="true" aria-labelledby="profile-title">
-      <button class="close" data-close aria-label="Tutup">×</button>
-      <div class="auth-mark">心</div><p class="eyebrow centered">RUANG PRIBADIMU</p>
-      <h2 id="profile-title">Selamat datang.</h2>
-      <p class="profile-email" id="profile-email"></p>
-      <button class="primary submit" id="sign-out">Keluar dari akun <span>↗</span></button>
-    </section>
-  </div>
-</body>
-</html>
+<section class="auth-screen" id="authScreen"><div class="auth-box">
+<div class="logo"><span class="logo-mark">心</span><div>KOKORO<div class="sub">JAPANESE ARCADE</div></div></div>
+<h1 id="authTitle">Selamat datang.</h1><p>Masuk ke distrik arcade Jepang dan nikmati permainan santai.</p>
+<div class="switch"><button id="loginTab" class="active" type="button">Login</button><button id="registerTab" type="button">Daftar</button></div>
+<form id="authForm"><label class="field hidden" id="nameField">Nama pengguna<input id="newName" autocomplete="username" placeholder="Nama pengguna"></label><label class="field">Username<input id="username" autocomplete="username" placeholder="Username" required></label><label class="field">Kata sandi<input id="password" type="password" autocomplete="current-password" placeholder="Kata sandi" required></label><button class="btn full" id="authSubmit">Masuk ke KOKORO →</button><div class="msg" id="authMsg"></div></form>
+<p class="hint">Akun demo bawaan: <b>koi</b> / <b>Admin</b>. Akun demo ini hanya untuk prototipe lokal, bukan autentikasi aman untuk situs publik.</p>
+</div></section>
+<div class="app hidden" id="app">
+<header class="header"><div class="logo"><span class="logo-mark">心</span><div>KOKORO<div class="sub">TOKYO NIGHT ARCADE</div></div></div><div class="header-right"><span class="balance-chip">◈ <span id="headerBalance">1.000</span></span><span class="user-chip" id="headerUser">koi</span><button class="btn ghost" id="logout" style="padding:9px 12px;font-size:11px">Keluar</button></div></header>
+<div class="layout"><aside class="side" id="sideNav"><button class="active" data-page="game"><b>🎮</b> Game</button><button data-page="wallet"><b>◈</b> Wallet</button><button data-page="profile"><b>♙</b> Profil</button><button data-page="promo"><b>🎁</b> Promo</button></aside>
+<main class="main">
+<section class="page" id="page-game"><div class="welcome"><div class="eyebrow">東京 · DISTRIK ARCADE</div><h1>おかえり, <span id="welcomeName">Koi</span>.</h1><p>Selamat datang kembali. Pilih permainan dan nikmati suasana malam Jepang.</p></div><div class="section"><div class="section-head"><h2>Game pilihan</h2><small>Mini-game santai</small></div><div class="cards">
+<article class="card"><div class="game-art">🌸</div><div class="card-body"><h3>Sakura Match</h3><p>Susun simbol bunga dan pecahkan tantangan.</p><button class="btn" data-play="Sakura Match">Buka game →</button></div></article>
+<article class="card"><div class="game-art">🎴</div><div class="card-body"><h3>Neon Mahjong</h3><p>Latih ingatan lewat permainan ubin.</p><button class="btn" data-play="Neon Mahjong">Buka game →</button></div></article>
+<article class="card"><div class="game-art">🏮</div><div class="card-body"><h3>Lantern Dash</h3><p>Tantangan refleks untuk mengejar skor.</p><button class="btn" data-play="Lantern Dash">Buka game →</button></div></article>
+</div></div><p class="disclaimer">KOKORO adalah arcade simulator. Saldo merupakan poin virtual untuk tampilan dan hiburan, bukan uang, tidak dapat dipertaruhkan atau ditarik.</p></section>
+<section class="page hidden" id="page-wallet"><div class="section-head"><h2>Wallet / Saldo</h2><small>Poin virtual</small></div><div class="panel"><div class="eyebrow">SALDO KOKORO</div><div class="big-balance">◈ <span id="walletBalance">1.000</span></div><p class="muted">Saldo virtual akunmu. Tidak memiliki nilai tunai dan tidak dapat ditransfer atau dicairkan.</p></div><div class="section panel"><h3>Aktivitas saldo</h3><p class="muted" id="walletActivity">Belum ada aktivitas.</p></div></section>
+<section class="page hidden" id="page-profile"><div class="section-head"><h2>Profil</h2></div><div class="panel"><div class="profile-row"><span>Username</span><b id="profileName">koi</b></div><div class="profile-row"><span>Tipe akun</span><b id="profileType">Demo</b></div><div class="profile-row"><span>Bergabung</span><b id="profileDate">Hari ini</b></div><div class="profile-row"><span>Saldo virtual</span><b id="profileBalance">1.000</b></div></div></section>
+<section class="page hidden" id="page-promo"><div class="section-head"><h2>Promo</h2><small>Event arcade</small></div><div class="panel promo"><div class="promo-icon">🌸</div><div><b>Festival Sakura</b><p class="muted">Jelajahi game bertema musim semi. Event demo — tanpa pembelian.</p></div></div><div class="panel promo"><div class="promo-icon">🏮</div><div><b>Tokyo Night Bonus</b><p class="muted">Bonus sambutan virtual untuk akun baru: 1.000 poin.</p></div></div></section>
+</main></div>
+<nav class="mobile-nav" id="mobileNav"><button class="active" data-page="game"><b>🎮</b>Game</button><button data-page="wallet"><b>◈</b>Wallet</button><button data-page="profile"><b>♙</b>Profil</button><button data-page="promo"><b>🎁</b>Promo</button></nav>
+</div><div id="toast" class="toast hidden"></div>
+<script>
+const $=s=>document.querySelector(s);let mode='login',current=null;
+const DEMO_HASH='d033e22ae348aeb5660fc2140aec35850c4da997'; // SHA-1 placeholder replaced at runtime for demo comparison
+function setMode(next){mode=next;$('#loginTab').classList.toggle('active',mode==='login');$('#registerTab').classList.toggle('active',mode==='register');$('#nameField').classList.toggle('hidden',mode!=='register');$('#authTitle').textContent=mode==='login'?'Selamat datang.':'Buat akun baru.';$('#authSubmit').textContent=mode==='login'?'Masuk ke KOKORO →':'Daftar sekarang →';$('#authMsg').textContent='';}
+$('#loginTab').onclick=()=>setMode('login');$('#registerTab').onclick=()=>setMode('register');
+function hash(s){return crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)).then(b=>[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join(''))}
+function users(){try{return JSON.parse(localStorage.getItem('kokoro_users')||'{}')}catch{return {}}}
+function saveUsers(v){localStorage.setItem('kokoro_users',JSON.stringify(v))}
+function toast(t){$('#toast').textContent=t;$('#toast').classList.remove('hidden');setTimeout(()=>$('#toast').classList.add('hidden'),2600)}
+function showApp(user){current=user;$('#authScreen').classList.add('hidden');$('#app').classList.remove('hidden');$('#headerUser').textContent=user.username;$('#welcomeName').textContent=user.username;$('#profileName').textContent=user.username;$('#profileType').textContent=user.demo?'Demo':'Pengguna lokal';$('#profileDate').textContent=user.created||'Hari ini';updateBalance();showPage('game')}
+function updateBalance(){let n=current?.balance??1000;let f=n.toLocaleString('id-ID');$('#headerBalance').textContent=f;$('#walletBalance').textContent=f;$('#profileBalance').textContent=f}
+function showPage(p){document.querySelectorAll('.page').forEach(x=>x.classList.add('hidden'));$('#page-'+p).classList.remove('hidden');document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===p))}
+document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>showPage(b.dataset.page));
+$('#authForm').addEventListener('submit',async e=>{e.preventDefault();let u=$('#username').value.trim().toLowerCase(),p=$('#password').value;$('#authMsg').textContent='Memeriksa akun...';try{let db=users();if(mode==='login'){if(u==='koi'&&p==='Admin'){showApp({username:'koi',balance:1000,demo:true,created:'Akun bawaan'});return}let rec=db[u];if(!rec||rec.passwordHash!==await hash(p)){throw Error('Username atau kata sandi salah.')}showApp({username:u,balance:rec.balance??1000,demo:false,created:rec.created});}else{let name=$('#newName').value.trim();if(!/^[a-zA-Z0-9_]{3,18}$/.test(u))throw Error('Username harus 3–18 karakter (huruf, angka, _).');if(p.length<6)throw Error('Kata sandi minimal 6 karakter.');if(name.length<2)throw Error('Nama pengguna minimal 2 karakter.');if(u==='koi'||db[u])throw Error('Username sudah digunakan.');db[u]={passwordHash:await hash(p),displayName:name,balance:1000,created:new Date().toLocaleDateString('id-ID')};saveUsers(db);showApp({username:u,balance:1000,demo:false,created:db[u].created});}}catch(err){$('#authMsg').textContent=err.message||'Gagal memproses akun.'}});
+$('#logout').onclick=()=>{current=null;$('#app').classList.add('hidden');$('#authScreen').classList.remove('hidden');$('#password').value='';setMode('login')};
+document.querySelectorAll('[data-play]').forEach(b=>b.onclick=()=>toast(b.dataset.play+' akan segera hadir.'));
+$('#walletActivity').textContent='Bonus awal: +1.000 poin virtual.';
+</script></body></html>
