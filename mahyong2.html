@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#160d18">
+<title>Mahjong 2 — Tile Arcade</title>
+<style>
+:root{color-scheme:dark;--bg:#100a13;--panel:#211522;--panel2:#2c1b2b;--line:#684050;--gold:#f2cc83;--pink:#ff668e;--cream:#fff4df;--muted:#c5afbd}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -10%,#74304d 0,transparent 48%),linear-gradient(160deg,#130c17,#09070d);color:var(--cream);font:15px system-ui,-apple-system,Segoe UI,sans-serif}
+button{font:inherit;cursor:pointer}.wrap{width:min(100%,560px);margin:auto;padding:18px 14px 34px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}.brand{font-weight:900;letter-spacing:3px;color:var(--gold);font-size:19px}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:4px;font-weight:600;margin-top:3px}.pill{border:1px solid #80505e;background:#241723;border-radius:30px;padding:8px 12px;color:#f7d8e1;font-size:12px}
+.hero{text-align:center;padding:14px 8px 18px}.hero h1{font-family:Georgia,serif;font-size:clamp(28px,8vw,42px);margin:4px 0;color:#ffe4b2;text-shadow:0 3px 20px #ff9b6b55}.hero p{margin:0;color:var(--muted);font-size:12px;letter-spacing:1px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0 14px}.stat{background:linear-gradient(145deg,#302033,#1b121f);border:1px solid #593649;border-radius:12px;padding:10px;text-align:center}.stat span{display:block;color:var(--muted);font-size:10px;letter-spacing:1px;text-transform:uppercase}.stat b{display:block;color:var(--gold);font-size:20px;margin-top:3px;font-variant-numeric:tabular-nums}
+.game{background:linear-gradient(145deg,#4a2838,#241725 55%,#17101b);border:1px solid #946074;border-radius:19px;padding:12px;box-shadow:0 18px 50px #0008,inset 0 1px #ffffff22}.board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;perspective:700px}.tile{aspect-ratio:.82;border:1px solid #d6b78c;border-radius:9px;background:linear-gradient(145deg,#fff3d6,#d7b88e 72%,#a77e65);box-shadow:0 4px 0 #765044,0 6px 10px #0005,inset 0 1px #fff;display:grid;place-items:center;color:#9d273d;font-family:Georgia,serif;font-size:clamp(25px,7vw,39px);font-weight:bold;text-shadow:0 1px #fff8;user-select:none;transition:transform .16s,filter .16s,opacity .16s}.tile:active{transform:translateY(3px);box-shadow:0 1px 0 #765044}.tile.selected{outline:3px solid #ffe39b;filter:brightness(1.14);transform:translateY(-3px)}.tile.empty{visibility:hidden}.tile.special{color:#176b61}.tile.gold{color:#9b5b13}.message{min-height:25px;text-align:center;color:#ffe1a0;font-size:12px;padding:10px 2px 2px}.controls{display:flex;gap:9px;margin-top:13px}.controls button{flex:1;border:1px solid #966072;border-radius:11px;padding:13px 8px;background:linear-gradient(180deg,#8e3e5c,#5d263f);color:white;font-weight:800;box-shadow:0 4px 0 #351827}.controls button.secondary{background:#302132;border-color:#67485d;box-shadow:0 4px 0 #160f1a;color:#f4dce6}.controls button:disabled{opacity:.4;cursor:default}.help{margin-top:16px;padding:14px;border:1px solid #503448;border-radius:13px;background:#1b121e;color:var(--muted);font-size:12px;line-height:1.6}.help b{color:#ffe3b4}.help ul{margin:7px 0 0;padding-left:18px}.footer{text-align:center;color:#826d7c;font-size:10px;margin-top:16px}
+@keyframes pop{50%{transform:scale(1.13);filter:brightness(1.4)}}.pop{animation:pop .25s ease}
+@media(max-width:360px){.board{gap:5px}.game{padding:8px}.tile{border-radius:7px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="top"><div class="brand">KOI ARCADE<small>JAPANESE TILE PUZZLE</small></div><div class="pill">和 • Mahjong 2</div></header>
+<section class="hero"><h1>Mahjong Tile Rush</h1><p>COCOKKAN UBIN • BUAT KOMBO • KEJAR SKOR TERTINGGI</p></section>
+<section class="stats" aria-live="polite">
+ <div class="stat"><span>Skor</span><b id="score">0</b></div><div class="stat"><span>Rekor</span><b id="best">0</b></div><div class="stat"><span>Langkah</span><b id="moves">25</b></div>
+</section>
+<section class="game"><div id="board" class="board" aria-label="Papan ubin Mahjong"></div><div id="message" class="message" aria-live="polite">Pilih dua ubin yang sama untuk menghapusnya.</div><div class="controls"><button id="shuffle">ACAK ULANG</button><button id="restart" class="secondary">ULANGI</button></div></section>
+<section class="help"><b>Cara bermain</b><ul><li>Ketuk dua ubin dengan simbol yang sama untuk mencocokkannya.</li><li>Setiap pasangan yang cocok memberi 100 poin.</li><li>Ubin yang dihapus membuat ubin di atasnya turun mengisi ruang kosong.</li><li>Selesaikan papan sebelum langkah habis untuk bonus penyelesaian.</li></ul></section>
+<div class="footer">GAME ARCADE OFFLINE • TANPA TARUHAN ATAU UANG SUNGGUHAN</div>
+</main>
+<script>
+(()=> {
+ const symbols=['🀇','🀈','🀉','🀊','🀋','🀌','🀍','🀎','🀏','🀐','🀑','🀒','🀄','🀅','🀆'];
+ const boardEl=document.getElementById('board'),scoreEl=document.getElementById('score'),bestEl=document.getElementById('best'),movesEl=document.getElementById('moves'),msg=document.getElementById('message');
+ let board=[],selected=null,score=0,moves=25,locked=false,best=0;
+ try{best=Number(localStorage.getItem('mahjongTileBest')||0)}catch(e){}
+ bestEl.textContent=best;
+ const shuffle=a=>{for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+ function newGame(){let pool=[];for(let i=0;i<10;i++){let s=symbols[Math.floor(Math.random()*symbols.length)];pool.push(s,s)}board=shuffle(pool);score=0;moves=25;selected=null;locked=false;render();say('Papan baru siap. Temukan pasangan ubin yang sama!');}
+ function say(t){msg.textContent=t}
+ function render(){boardEl.innerHTML='';board.forEach((s,i)=>{let b=document.createElement('button');b.className='tile'+(s?'':' empty')+(selected===i?' selected':'');b.type='button';b.textContent=s||'';b.disabled=!s||locked;b.setAttribute('aria-label',s?'Ubin '+s:'Kosong');b.addEventListener('click',()=>pick(i));boardEl.appendChild(b)});scoreEl.textContent=score;movesEl.textContent=moves;bestEl.textContent=best;}
+ function pick(i){if(locked||!board[i])return;if(selected===null){selected=i;render();say('Pilih ubin kedua dengan simbol yang sama.');return}if(selected===i){selected=null;render();return}let first=selected;selected=null;if(board[first]===board[i]){board[first]=null;board[i]=null;score+=100;moves--;say('Cocok! +100 poin. Ubin bergeser…');locked=true;render();setTimeout(()=>{collapse();locked=false;render();check();},260)}else{moves--;say('Belum cocok. Coba cari pasangan lain.');render();check()}}
+ function collapse(){for(let c=0;c<5;c++){let vals=[];for(let r=3;r>=0;r--){let v=board[r*5+c];if(v)vals.push(v)}for(let r=3;r>=0;r--)board[r*5+c]=vals[3-r]||null}}
+ function check(){let left=board.filter(Boolean).length;if(left===0){let bonus=moves*20;score+=bonus;say('Hebat! Papan selesai. Bonus '+bonus+' poin! Tekan ULANGI untuk bermain lagi.');}else if(moves<=0){say('Langkah habis! Skor akhir '+score+'. Tekan ULANGI untuk mencoba lagi.');board=board.map(()=>null);render()}else if(!hasPair()){say('Tidak ada pasangan tersisa. Tekan ACAK ULANG untuk susunan baru.');}}
+ function hasPair(){let a=board.filter(Boolean);return a.some((v,i)=>a.indexOf(v,i+1)!==-1)}
+ document.getElementById('shuffle').addEventListener('click',()=>{if(locked)return;let a=board.filter(Boolean);if(a.length<2){say('Mulai permainan baru untuk lanjut.');return}board=shuffle(a).concat(Array(20-a.length).fill(null));moves=Math.max(0,moves-1);selected=null;render();say('Ubin diacak ulang.');check()});
+ document.getElementById('restart').addEventListener('click',newGame);
+ const originalRender=render;
+ const observer=new MutationObserver(()=>{if(score>best){best=score;bestEl.textContent=best;try{localStorage.setItem('mahjongTileBest',String(best))}catch(e){}}});
+ observer.observe(scoreEl,{childList:true,characterData:true,subtree:true});
+ newGame();
+})();
+</script>
+</body>
+</html>
